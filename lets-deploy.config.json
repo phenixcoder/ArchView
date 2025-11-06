@@ -1,0 +1,28 @@
+{
+  "name": "archview",
+  "image": "archview:latest",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": "."
+  },
+  "deploy": {
+    "port": 3000,
+    "env": {
+      "DATA_ROOT": "/app/data",
+      "SEED_ON_EMPTY": "true",
+      "NODE_ENV": "production"
+    },
+    "volumes": [
+      {
+        "host": "./data",
+        "container": "/app/data"
+      }
+    ],
+    "healthcheck": {
+      "path": "/",
+      "interval": 30,
+      "timeout": 10,
+      "retries": 3
+    }
+  }
+}
