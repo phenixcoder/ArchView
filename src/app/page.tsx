@@ -1,12 +1,18 @@
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">ArchView</h1>
-        <p className="text-muted-foreground">
-          System Architecture Visualizer - Coming Soon
-        </p>
-      </div>
-    </main>
-  );
+import { Explorer } from '@/components/Explorer';
+import { loadSystems, loadConnections, loadAllJourneys } from '@/lib/data';
+
+export default async function Home() {
+  const systems = await loadSystems();
+  const connections = await loadConnections();
+  const journeyData = await loadAllJourneys();
+
+  const journeys = journeyData.map(({ journey, path }) => ({
+    id: journey.id,
+    name: journey.name,
+    label: journey.label,
+    path: `journeys/${path}`,
+    tags: journey.tags,
+  }));
+
+  return <Explorer initialSystems={systems} initialConnections={connections} initialJourneys={journeys} />;
 }
