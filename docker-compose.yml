@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  archview:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: archview:latest
+    container_name: archview
+    ports:
+      - "3000:3000"
+    environment:
+      - DATA_ROOT=/app/data
+      - SEED_ON_EMPTY=true
+      - SEED_OVERWRITE=false
+      - NODE_ENV=production
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
