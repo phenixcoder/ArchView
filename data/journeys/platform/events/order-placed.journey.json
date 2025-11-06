@@ -1,0 +1,27 @@
+{
+  "id": "platform/events/order-placed",
+  "name": "Order Placed Event",
+  "label": "📦 Order Event",
+  "description": "System behavior when an order is placed",
+  "connections": [
+    "c3",
+    "c4",
+    "c5"
+  ],
+  "tags": [
+    "events",
+    "p1"
+  ],
+  "owners": [
+    {
+      "name": "Platform Team",
+      "email": "platform@example.com"
+    }
+  ],
+  "docs": [
+    {
+      "title": "Event Architecture",
+      "url": "https://docs.example.com/events"
+    }
+  ]
+}

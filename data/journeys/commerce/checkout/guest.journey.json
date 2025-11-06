@@ -1,0 +1,29 @@
+{
+  "id": "commerce/checkout/guest",
+  "name": "Guest Checkout",
+  "label": "🛒 Guest Checkout",
+  "description": "Anonymous user purchases without creating an account",
+  "connections": [
+    "c1",
+    "c2",
+    "c3",
+    "c4"
+  ],
+  "tags": [
+    "p0",
+    "revenue",
+    "commerce"
+  ],
+  "owners": [
+    {
+      "name": "Checkout PM",
+      "email": "checkout@example.com"
+    }
+  ],
+  "docs": [
+    {
+      "title": "Guest Checkout Flow",
+      "url": "https://docs.example.com/guest-checkout"
+    }
+  ]
+}

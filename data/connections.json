@@ -1,0 +1,114 @@
+{
+  "connections": [
+    {
+      "id": "c1",
+      "from": "web",
+      "to": "bff",
+      "label": "HTTPS API Calls",
+      "protocol": "HTTPS",
+      "endpoint": "/api/v1",
+      "port": 443,
+      "tags": [
+        "api",
+        "core"
+      ],
+      "credentialAlias": "web-to-bff-api-key",
+      "status": {
+        "dev": "healthy",
+        "stage": "healthy",
+        "prod": "healthy"
+      }
+    },
+    {
+      "id": "c2",
+      "from": "bff",
+      "to": "auth",
+      "label": "Auth Validation",
+      "protocol": "HTTPS",
+      "endpoint": "/validate",
+      "port": 443,
+      "tags": [
+        "auth",
+        "security"
+      ],
+      "credentialAlias": "bff-to-auth-jwt",
+      "status": {
+        "dev": "healthy",
+        "stage": "degraded",
+        "prod": "healthy"
+      }
+    },
+    {
+      "id": "c3",
+      "from": "bff",
+      "to": "core",
+      "label": "Business Logic",
+      "protocol": "gRPC",
+      "endpoint": "core.CoreService",
+      "port": 50051,
+      "tags": [
+        "core"
+      ],
+      "credentialAlias": "bff-to-core-mtls",
+      "status": {
+        "dev": "healthy",
+        "stage": "healthy",
+        "prod": "healthy"
+      }
+    },
+    {
+      "id": "c4",
+      "from": "core",
+      "to": "db",
+      "label": "Database Queries",
+      "protocol": "PostgreSQL",
+      "port": 5432,
+      "tags": [
+        "data",
+        "core"
+      ],
+      "credentialAlias": "core-to-db-credentials",
+      "status": {
+        "dev": "healthy",
+        "stage": "healthy",
+        "prod": "healthy"
+      }
+    },
+    {
+      "id": "c5",
+      "from": "core",
+      "to": "mq",
+      "label": "Publish Events",
+      "protocol": "AMQP",
+      "port": 5672,
+      "tags": [
+        "events",
+        "messaging"
+      ],
+      "credentialAlias": "core-to-mq-credentials",
+      "status": {
+        "dev": "healthy",
+        "stage": "healthy",
+        "prod": "degraded"
+      }
+    },
+    {
+      "id": "c6",
+      "from": "bff",
+      "to": "pay",
+      "label": "Payment Processing",
+      "protocol": "HTTPS",
+      "endpoint": "/process",
+      "port": 443,
+      "tags": [
+        "payments"
+      ],
+      "credentialAlias": "bff-to-pay-api-key",
+      "status": {
+        "dev": "healthy",
+        "stage": "healthy",
+        "prod": "healthy"
+      }
+    }
+  ]
+}

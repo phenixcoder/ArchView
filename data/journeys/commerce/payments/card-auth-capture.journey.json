@@ -1,0 +1,28 @@
+{
+  "id": "commerce/payments/card-auth-capture",
+  "name": "Card Auth & Capture Flow",
+  "label": "💳 Card Payment",
+  "description": "Credit card authorization and capture process",
+  "connections": [
+    "c1",
+    "c2",
+    "c6",
+    "c3"
+  ],
+  "tags": [
+    "payments",
+    "p0"
+  ],
+  "owners": [
+    {
+      "name": "Payments Lead",
+      "email": "payments@example.com"
+    }
+  ],
+  "docs": [
+    {
+      "title": "Payment Processing",
+      "url": "https://docs.example.com/payments"
+    }
+  ]
+}

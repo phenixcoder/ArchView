@@ -1,0 +1,193 @@
+{
+  "systems": [
+    {
+      "id": "web",
+      "name": "Web Frontend",
+      "domain": "app.example.com",
+      "description": "Customer-facing web application",
+      "tags": [
+        "frontend",
+        "customer"
+      ],
+      "owners": [
+        {
+          "name": "Frontend Team",
+          "email": "frontend@example.com"
+        }
+      ],
+      "docs": [
+        {
+          "title": "Web App Docs",
+          "url": "https://docs.example.com/web"
+        }
+      ],
+      "status": {
+        "dev": "healthy",
+        "stage": "healthy",
+        "prod": "healthy"
+      }
+    },
+    {
+      "id": "bff",
+      "name": "Backend for Frontend",
+      "domain": "bff.example.com",
+      "description": "API gateway for web clients",
+      "tags": [
+        "backend",
+        "api"
+      ],
+      "owners": [
+        {
+          "name": "API Team",
+          "email": "api@example.com"
+        }
+      ],
+      "docs": [
+        {
+          "title": "BFF API Docs",
+          "url": "https://docs.example.com/bff"
+        }
+      ],
+      "status": {
+        "dev": "healthy",
+        "stage": "degraded",
+        "prod": "healthy"
+      }
+    },
+    {
+      "id": "auth",
+      "name": "Auth Service",
+      "domain": "auth.example.com",
+      "description": "Authentication and authorization service",
+      "tags": [
+        "backend",
+        "security"
+      ],
+      "owners": [
+        {
+          "name": "Security Team",
+          "email": "security@example.com"
+        }
+      ],
+      "docs": [
+        {
+          "title": "Auth Service Docs",
+          "url": "https://docs.example.com/auth"
+        }
+      ],
+      "status": {
+        "dev": "healthy",
+        "stage": "healthy",
+        "prod": "healthy"
+      }
+    },
+    {
+      "id": "core",
+      "name": "Core Service",
+      "domain": "core.example.com",
+      "description": "Core business logic service",
+      "tags": [
+        "backend",
+        "core"
+      ],
+      "owners": [
+        {
+          "name": "Platform Team",
+          "email": "platform@example.com"
+        }
+      ],
+      "docs": [
+        {
+          "title": "Core Service Docs",
+          "url": "https://docs.example.com/core"
+        }
+      ],
+      "status": {
+        "dev": "healthy",
+        "stage": "healthy",
+        "prod": "healthy"
+      }
+    },
+    {
+      "id": "db",
+      "name": "Database",
+      "domain": "db.example.com",
+      "description": "Primary PostgreSQL database",
+      "tags": [
+        "data",
+        "storage"
+      ],
+      "owners": [
+        {
+          "name": "Data Team",
+          "email": "data@example.com"
+        }
+      ],
+      "docs": [
+        {
+          "title": "Database Schema",
+          "url": "https://docs.example.com/db"
+        }
+      ],
+      "status": {
+        "dev": "healthy",
+        "stage": "healthy",
+        "prod": "healthy"
+      }
+    },
+    {
+      "id": "mq",
+      "name": "Message Queue",
+      "domain": "mq.example.com",
+      "description": "RabbitMQ message broker",
+      "tags": [
+        "messaging",
+        "events"
+      ],
+      "owners": [
+        {
+          "name": "Platform Team",
+          "email": "platform@example.com"
+        }
+      ],
+      "docs": [
+        {
+          "title": "MQ Docs",
+          "url": "https://docs.example.com/mq"
+        }
+      ],
+      "status": {
+        "dev": "healthy",
+        "stage": "healthy",
+        "prod": "degraded"
+      }
+    },
+    {
+      "id": "pay",
+      "name": "Payment Service",
+      "domain": "pay.example.com",
+      "description": "Payment processing service",
+      "tags": [
+        "backend",
+        "payments"
+      ],
+      "owners": [
+        {
+          "name": "Payments Team",
+          "email": "payments@example.com"
+        }
+      ],
+      "docs": [
+        {
+          "title": "Payment Service Docs",
+          "url": "https://docs.example.com/pay"
+        }
+      ],
+      "status": {
+        "dev": "healthy",
+        "stage": "healthy",
+        "prod": "healthy"
+      }
+    }
+  ]
+}
