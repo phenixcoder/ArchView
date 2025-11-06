@@ -41,7 +41,10 @@ export function RightPanel({
         {/* Basic Info */}
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-base">{entity?.name || (selectedConnection && `${selectedConnection.from} → ${selectedConnection.to}`)}</CardTitle>
+            <CardTitle className="text-base">
+              {isSystem && selectedSystem ? selectedSystem.name :
+                selectedConnection ? `${selectedConnection.from} → ${selectedConnection.to}` : ''}
+            </CardTitle>
             {entity?.description && (
               <CardDescription className="text-xs">{entity.description}</CardDescription>
             )}
